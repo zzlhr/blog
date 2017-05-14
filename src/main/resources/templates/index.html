@@ -135,7 +135,7 @@
                 <div class="panel panel-warning" th:each="message: ${messages}" >
                     <div class="panel-heading" th:attr="id='ms'+${message.id}">
                         <label class="bg-info" th:text="${message.message_name}">黑白</label> 说：<span class="pull-right" th:text="${message.message_time}">发布于：2017-01-21 09:30</span> </div>
-                    <div class="panel-body" th:text="${message.message_value}">
+                    <div class="panel-body" th:utext="${message.message_value}">
                         <span>欢迎光临欢迎光临欢迎光临欢迎光临欢迎光临欢迎光临欢迎光临欢迎光临欢迎光临欢迎光临欢迎光临欢迎光临欢迎光临欢迎光临欢迎光临欢迎光临</span>
                     </div>
                     <div th:utext="${message.remessage}">
@@ -279,7 +279,7 @@
                 <div class="modal-body">
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" placeholder="联系方式 E-mail、qq" />
+                        <input type="text" id="link" class="form-control" placeholder="联系方式 E-mail、qq" />
                     </div>
                     <p class="text-muted">请放心填写，联系方式作为本人和您联系的唯一渠道，本站不会以任何方式泄露您的联系方式！</p>
                     <div class="input-group">
@@ -290,6 +290,7 @@
                     <div id="editor"></div>
                 </div>
                 <div class="modal-footer">
+                    <span id="sendmessagemessage" style="text:red"></span>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="button" id="sendamessage" class="btn btn-primary">Save changes</button>
                 </div>
@@ -389,10 +390,14 @@
         var message = {
             name:$('#name').val(),
             fid:0,
-            value:editor.$txt.html()
+            value:editor.$txt.html(),
+            link:$('#link').val()
         }
         ajax("message/sendmessage",message,"post",function (data) {
-            console.log(data);
+            $('#sendmessagemessage').html(data.msg);
+            setTimeout(function () {
+                $('#sendmessagemessage').html('');
+            },1000)
         })
     })
 
