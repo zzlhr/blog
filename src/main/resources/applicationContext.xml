@@ -30,6 +30,8 @@
         <mapper resource="cn/myheibai/blog/mapper/AdminMapper.xml"/>
         <mapper resource="cn/myheibai/blog/mapper/ArticleCommentMapper.xml"/>
         <mapper resource="cn/myheibai/blog/mapper/MessageMapper.xml"/>
+        <mapper resource="cn/myheibai/blog/mapper/LogMapper.xml"/>
+        <mapper resource="cn/myheibai/blog/mapper/WebsiteMapper.xml"/>
     </mappers>
 
 </configuration>
