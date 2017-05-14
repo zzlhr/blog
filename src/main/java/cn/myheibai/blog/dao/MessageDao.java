@@ -10,13 +10,13 @@ import java.util.List;
  */
 public interface MessageDao {
     @Insert("INSERT INTO `message` VALUES (null,#{message.message_name},#{message.message_time}," +
-            "#{message.message_value},#{message.message_fid},#{message.message_replaynum},#{message.message_ip})")
+            "#{message.message_value},#{message.message_fid},#{message.message_replaynum},#{message.message_ip},#{message.message_link})")
     void addMessage(@Param("message") Message message);
 
 
     @Update("UPDATE message SET message_name=#{message.message_name},message_time=#{message.message_time}," +
             "message_value=#{message.message_value},message_fid=#{message.message_fid},message_replaynum=#{message.message_replaynum}," +
-            "message_ip=#{message.message_ip} WHERE id=#{message.id}")
+            "message_ip=#{message.message_ip},#{message.message_link} WHERE id=#{message.id}")
     void updateMessage(@Param("message") Message message);
 
     @Delete("DELETE FROM message WHERE id=#{id}")
