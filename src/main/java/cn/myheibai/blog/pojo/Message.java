@@ -8,6 +8,29 @@ public class Message {
   private Long message_fid;
   private Long message_replaynum;
   private String message_ip;
+  private String message_link;
+
+  @Override
+  public String toString() {
+    return "Message{" +
+            "id=" + id +
+            ", message_name='" + message_name + '\'' +
+            ", message_time=" + message_time +
+            ", message_value='" + message_value + '\'' +
+            ", message_fid=" + message_fid +
+            ", message_replaynum=" + message_replaynum +
+            ", message_ip='" + message_ip + '\'' +
+            ", message_link='" + message_link + '\'' +
+            '}';
+  }
+
+  public String getMessage_link() {
+    return message_link;
+  }
+
+  public void setMessage_link(String message_link) {
+    this.message_link = message_link;
+  }
 
   public Long getId() {
     return id;
