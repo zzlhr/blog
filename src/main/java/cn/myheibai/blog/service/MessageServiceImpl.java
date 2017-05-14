@@ -41,6 +41,7 @@ public class MessageServiceImpl extends Ser implements MessageService {
             jsonObject.put("msg",Error0);
             return jsonObject;
         }catch (Exception e){
+            e.printStackTrace();
             insertLog("添加留言失败",httpServletRequest.getContextPath(),1,0);
             try {
                 jsonObject.put("status","10003");
