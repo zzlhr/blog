@@ -1,10 +1,12 @@
 package cn.myheibai.blog.web;
 
+
 import cn.myheibai.blog.pojo.Message;
 import cn.myheibai.blog.service.MessageService;
 import cn.myheibai.blog.service.MessageServiceImpl;
 import cn.myheibai.blog.util.ServerUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +23,7 @@ import java.util.Map;
 @RequestMapping("/message")
 public class MessageController {
     Map map = new HashMap();
-    @RequestMapping("/sendmessage")
+    @RequestMapping(value = "/sendmessage", method = RequestMethod.POST)
     public Map sendMessage(@RequestParam("name")String name,@RequestParam("link")String link,
                            @RequestParam("fid")long fid,@RequestParam("value")String value,
                            HttpServletRequest req){
@@ -32,6 +34,8 @@ public class MessageController {
         message.setMessage_fid(fid);
         message.setMessage_ip(ServerUtil.getLocalIp(req));
         message.setMessage_value(value);
+        message.setMessage_link(link);
+        message.setMessage_replaynum((long) 0);
         System.out.println(ServerUtil.getLocalIp(req));
         messageService.addMessage(message);
         map.put("status",0);
