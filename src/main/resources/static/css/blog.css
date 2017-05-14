@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    font-family: arial, sans-serif;
+    height:100%;
+}
+a.blog-left-list a:link{color:yellow; !important;}
+a.blog-left-list a:visited{color: #a6e1ec; !important;}
+a.blog-left-list a:hover{color: #eb9316; !important;}
+a.blog-left-list a:active{color: #8c8c8c; !important;}
+.list{
+    height: 50px;
+}
+.s{
+    box-shadow: rgb(100, 100, 100) 0px 2px 14px 0px;
+}
+/*文章简介自动隐藏效果*/
+.hidetext{
+    overflow: hidden; /*自动隐藏文字*/
+    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+    white-space: nowrap;/*强制不换行*/
+    width: 100%;/*不允许出现半汉字截断*/
+    /*color:#6699ff;border:1px #ff8000 dashed;*/
+}
+.messagelist{
+    /*width: 100%;*/
+    overflow: hidden; /*自动隐藏文字*/
+    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+    white-space: nowrap;/*强制不换行*/
+    width: 50%;/*不允许出现半汉字截断*/
+    /*color:#6699ff;border:1px #ff8000 dashed;*/
+}
+.blog-modal-dialog{
+    width: 70%;
+}
+.modal-content {
+    width: 100%;
+}
+.yl{
+    color: #ce8483;
+}
+.blog-right-list{
+    height: 23%;
+    margin: 1% 2% 0 2%;
+    padding: 1% 2% 0 2%;
+    clear: both;
+}
+.breadcrumb{
+    background-color: white !important;
+}
+.content{
+    /*margin-top: 8%;*/
+}
+.text-left{
+    text-align: left !important;
+}
+.header{
+}
+.panel-footer{
+    background-color: #fbf4d3;
+}

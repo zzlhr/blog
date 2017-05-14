@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    font-family: arial, sans-serif;
+    height:100%;
+}
+a.blog-left-list a:link{color:yellow; !important;}
+a.blog-left-list a:visited{color: #a6e1ec; !important;}
+a.blog-left-list a:hover{color: #eb9316; !important;}
+a.blog-left-list a:active{color: #8c8c8c; !important;}
+.list{
+    height: 50px;
+}
+.s{
+    box-shadow: rgb(100, 100, 100) 0px 2px 14px 0px;
+}
+/*文章简介自动隐藏效果*/
+.hidetext{
+    overflow: hidden; /*自动隐藏文字*/
+    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+    white-space: nowrap;/*强制不换行*/
+    width: 100%;/*不允许出现半汉字截断*/
+    /*color:#6699ff;border:1px #ff8000 dashed;*/
+}
+.messagelist{
+    /*width: 100%;*/
+    overflow: hidden; /*自动隐藏文字*/
+    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+    white-space: nowrap;/*强制不换行*/
+    width: 50%;/*不允许出现半汉字截断*/
+    /*color:#6699ff;border:1px #ff8000 dashed;*/
+}
+.modal-content {
+    width: 500px;
+}
+.yl{
+    color: #ce8483;
+}
+.yqlj{
+    padding-bottom: 10px;
+}
+.blog-right-list{
+    margin: 10px;
+    padding: 10px;
+    clear: both;
+}
+.breadcrumb{
+    background-color: white !important;
+}
